@@ -1,7 +1,10 @@
 package com.example.noapperance;
-/*
+
 import android.os.Bundle;
 import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -10,13 +13,17 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 import java.util.List;
 
-public class UserActivity {
+public class UserActivity extends AppCompatActivity {
     private TextView textViewResult;
+    private TextView textViewName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_chat);
+
         textViewResult= findViewById(R.id.text_view_result);
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://192.168.0.12:8080/v1/user/")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -53,5 +60,5 @@ public class UserActivity {
             }
         });
     }
+
 }
-*/
